@@ -45,7 +45,7 @@ def get_native(file, medium):
     for row in filtered:
         final += row + "\n"
 
-    with open("native_written.txt", "w") as file:
+    with open(f"native_{medium.lower()}.txt", "w") as file:
         file.write(final)
     file.close()
     return len(final.split(" "))
@@ -55,6 +55,14 @@ def get_native(file, medium):
 #print(get_data("learners_chaplin.csv", "german", "Spoken", "advanced"))
 #print(get_native("natives_chaplin.csv", "Spoken")) #native_chap_spoken.txt
 
+# Reference corpus (native)
+get_native("natives_chaplin.csv", "Written")
 
-print(get_data("learners_chaplin.csv", "german", "Written", "beginner"))
-print(get_native("natives_chaplin.csv", "Written")) #native_chap_spoken.txt
+# Target corpus (German)
+get_data("learners_chaplin.csv", "german", "Written", "beginner")
+get_data("learners_chaplin.csv", "german", "Written", "intermediate")
+get_data("learners_chaplin.csv", "german", "Written", "advanced")
+
+get_data("learners_chaplin.csv", "german", "Spoken", "beginner")
+get_data("learners_chaplin.csv", "german", "Spoken", "intermediate")
+get_data("learners_chaplin.csv", "german", "Spoken", "advanced")
