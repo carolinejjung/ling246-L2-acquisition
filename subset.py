@@ -1,8 +1,8 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 
-def get_data(file, lang, medium, prof):
-    data = pd.read_csv(f"corefl-data/{file}", sep='\t')
+def get_learner_data(lang, medium, prof):
+    data = pd.read_csv(f"corefl-data/{lang}.csv", sep='\t')
     filter_medium = data[data["Medium"] == f"{medium}"]
 
     # group proficiencies into beginner, intermediate, advanced 
@@ -34,12 +34,10 @@ def reassign_proficiency(raw_prof):
     else:
         return "invalid"
 
-
-def get_native(file, medium):
-    data = pd.read_csv(f"corefl-data/{file}", sep='\t')
+def get_native(medium):
+    data = pd.read_csv(f"corefl-data/natives.csv", sep='\t')
     filter_medium = data[data["Medium"] == f"{medium}"]
 
-    # group proficiencies into beginner, intermediate, advanced 
     final = ""
     filtered = filter_medium["Text"]
     for row in filtered:
@@ -51,18 +49,24 @@ def get_native(file, medium):
     return len(final.split(" "))
 
 
-#currently, the only data we have is german
-#print(get_data("learners_chaplin.csv", "german", "Spoken", "advanced"))
-#print(get_native("natives_chaplin.csv", "Spoken")) #native_chap_spoken.txt
-
 # Reference corpus (native)
-get_native("natives_chaplin.csv", "Written")
+get_native("Written")
+get_native("Spoken")
 
 # Target corpus (German)
-get_data("learners_chaplin.csv", "german", "Written", "beginner")
-get_data("learners_chaplin.csv", "german", "Written", "intermediate")
-get_data("learners_chaplin.csv", "german", "Written", "advanced")
+get_learner_data("german", "Written", "beginner")
+get_learner_data("german", "Written", "intermediate")
+get_learner_data("german", "Written", "advanced")
 
-get_data("learners_chaplin.csv", "german", "Spoken", "beginner")
-get_data("learners_chaplin.csv", "german", "Spoken", "intermediate")
-get_data("learners_chaplin.csv", "german", "Spoken", "advanced")
+get_learner_data("german", "Spoken", "beginner")
+get_learner_data("german", "Spoken", "intermediate")
+get_learner_data("german", "Spoken", "advanced")
+
+# Target corpus (Spanish)
+get_learner_data("spanish", "Written", "beginner")
+get_learner_data("spanish", "Written", "intermediate")
+get_learner_data("spanish", "Written", "advanced")
+
+get_learner_data("spanish", "Spoken", "beginner")
+get_learner_data("spanish", "Spoken", "intermediate")
+get_learner_data("spanish", "Spoken", "advanced")
