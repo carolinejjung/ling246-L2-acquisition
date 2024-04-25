@@ -16,8 +16,6 @@ def count_words(file):
     count = len(re.findall(r'\w+', all_participants))
     return num_participants, count
 
-
-
 files = os.listdir()
 corpora = [file for file in files if file.endswith('.txt')]
 
