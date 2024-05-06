@@ -11,4 +11,4 @@ Lozano, C., Díaz-Negrillo, A., & Callies, M. (2020). Designing and compiling a 
 
 Friel, Brian & Kennison, Shelia. (2001). Identifying German–English cognates, false cognates, and non-cognates: Methodological issues and descriptive norms. Bilingualism: Language and Cognition. 4. 249 - 274. 10.1017/S1366728901000438.
 
-Hout, Michael & Montelongo, José & White, Bryan & Hernandez, Anita & Wall, Francisco. (2023). Orthographic Similarity Ratings for English-Spanish Cognates from the Academic Word List. Frontiers in Education. 8-2023. 10.3389/feduc.2023.1225169. 
+Hout, M., Montelongo, J., White, B., Hernandez, A., Wall, F. (2023). Orthographic Similarity Ratings for English-Spanish Cognates from the Academic Word List. Frontiers in Education. 8-2023. 10.3389/feduc.2023.1225169. 
