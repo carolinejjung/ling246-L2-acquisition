@@ -6,7 +6,7 @@ Data:
 * All outside references are cited below.
 
 
-References:
+References: \
 Lozano, C., Díaz-Negrillo, A., & Callies, M. (2020). Designing and compiling a learner corpus of written and spoken narratives: COREFL. In C. Bongartz & J. Torregrossa (Eds.), What’s in a Narrative? Variation in Story-Telling at the Interface between Language and Literacy (pp. 21-46). Peter Lang. https://doi.org/10.3726/978-3-653-05182-7
 
 Friel, Brian & Kennison, Shelia. (2001). Identifying German–English cognates, false cognates, and non-cognates: Methodological issues and descriptive norms. Bilingualism: Language and Cognition. 4. 249 - 274. 10.1017/S1366728901000438.
