@@ -1,3 +1,8 @@
+"""
+@author: Caroline Jung
+Last modified: 5/9/24
+"""
+
 import pandas as pd
 
 data = pd.read_csv("spanish_cognates_hout.csv")

@@ -1,8 +1,14 @@
+"""
+@author: Caroline Jung
+Last modified: 5/9/24
+"""
+
 import regex as re
 import os
 import pandas as pd
 
 def count_words(file):
+    """Given a filename (corpus data in a txt format), count the number of participants (lines) and all words in the concordance."""
     f = open(file, "r")
     data = f.readlines()
     f.close()
@@ -20,14 +26,6 @@ files = os.listdir()
 corpora = [file for file in files if file.endswith('.txt')]
 
 stats = pd.DataFrame(data=corpora, columns=["filename"])
-
-# def parse_file(filename):
-#     return re.findall(r'(\w+)_(\w+)_(\w+).txt', filename)
-#     # for date in pattern2.finditer(text2):
-#     # print(date.group(1))
-# print(parse_file("native_written.txt"))
-
-# #stats["language"] = stats.apply(lambda x: x["filename"], axis=1)
 
 stats["num_participants"] = stats.apply(lambda x: count_words(x["filename"])[0], axis=1)
 stats["num_words"] = stats.apply(lambda x: count_words(x["filename"])[1], axis=1)

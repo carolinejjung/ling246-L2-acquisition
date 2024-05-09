@@ -1,7 +1,15 @@
+"""
+@author: Caroline Jung
+Last modified: 5/9/24
+"""
+
 import pandas as pd
 import matplotlib.pyplot as plt
 
 def get_learner_data(lang, medium, prof):
+    """Given the COREFL csv of learner data, output a txt file of just the concordances based on the native language, 
+    if written/spoken data, and English proficiency level."""
+
     data = pd.read_csv(f"corefl-data/{lang}.csv", sep='\t')
     filter_medium = data[data["Medium"] == f"{medium}"]
 
@@ -25,6 +33,7 @@ def get_learner_data(lang, medium, prof):
     return len(final.split(" "))
 
 def reassign_proficiency(raw_prof):
+    """Reassign CEFR proficiency levels into 3 main levels: beginner, intermediate, advanced."""
     if raw_prof == "A1 (lower beginner)" or raw_prof == "A2 (upper beginner)":
         return "beginner"
     elif raw_prof == "B1 (lower intermediate)" or raw_prof == "B2 (upper intermediate)":
@@ -35,6 +44,7 @@ def reassign_proficiency(raw_prof):
         return "invalid"
 
 def get_native(medium):
+    """Given the COREFL csv for native speakers, output a txt file of just the concordances based on if it was written or spoken data."""
     data = pd.read_csv(f"corefl-data/natives.csv", sep='\t')
     filter_medium = data[data["Medium"] == f"{medium}"]
 
@@ -48,7 +58,7 @@ def get_native(medium):
     file.close()
     return len(final.split(" "))
 
-
+# CREATE TXT FILES
 # Reference corpus (native)
 get_native("Written")
 get_native("Spoken")
